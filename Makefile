@@ -9,14 +9,6 @@ generate_ts:
          typeshare $(SRC_DIR) --lang=typescript --output-file=$(TS_OUTPUT_DIR)/output.ts; \
    done
 
-generate:
-		@find $(SRC_DIR) -type f -name "*.rs" | while read -r file; do \
-    		file_name=$$(basename $$file); \
-            file_name_without_extension=$${file_name%%.*}; \
-    		echo "Processing file: $$file_name"; \
-    		typeshare $(SRC_DIR) --lang=typescript --output-file=$(TS_OUTPUT_DIR)/$$file_name_without_extension.ts; \
-    	done
-
 install_rust:
 	@command -v rustc >/dev/null 2>&1 || { \
 		echo >&2 "Rust n'est pas installé. Installation en cours..."; \
