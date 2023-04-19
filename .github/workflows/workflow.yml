@@ -36,10 +36,8 @@ jobs:
         run: cd ts && npm install
 
       - name: Login to NPM
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_KEY }}
         run: |
-          cd ts && npm login --registry=https://registry.npmjs.org --always-auth --_authToken=$NODE_AUTH_TOKEN
+          cd ts && echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_KEY }}" > .npmrc
       - name: Publish Package
         run: |
-          cd ts && npm publish --registry=https://registry.npmjs.org/
+          cd ts && npm publish
