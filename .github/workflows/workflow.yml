@@ -26,24 +26,20 @@ jobs:
       - name: up minor version
         run: make up_version_minor_ts
 
-      - name: move in ts
-        run: cd ts
 
-      - name: show pwd
-        run: pwd
 
       - name: Use Node.js
         uses: actions/setup-node@v2
         with:
           node-version: '18.x'
       - name: Install Dependencies
-        run: npm install
+        run: cd ts && npm install
 
       - name: Login to NPM
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_KEY }}
         run: |
-          npm login --registry=https://registry.npmjs.org/ --scope=@votre_scope --always-auth
+          cd ts && npm login --registry=https://registry.npmjs.org/ --scope=@votre_scope --always-auth
       - name: Publish Package
         run: |
-          npm publish --registry=https://registry.npmjs.org/
+          cd ts && npm publish --registry=https://registry.npmjs.org/
