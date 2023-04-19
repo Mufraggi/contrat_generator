@@ -40,7 +40,6 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_KEY }}
         run: |
           cd ts && npm login --registry=https://registry.npmjs.org --always-auth --_authToken=$NODE_AUTH_TOKEN
-  env:
       - name: Publish Package
         run: |
           cd ts && npm publish --registry=https://registry.npmjs.org/
