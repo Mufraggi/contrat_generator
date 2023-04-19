@@ -21,3 +21,16 @@ install_typeshare_cli:
 		echo >&2 "typeshare-cli n'est pas installé. Installation en cours..."; \
 		cargo install typeshare-cli; \
 	}
+
+
+run_rust_script_ts:
+	cd tsPackageGenerator && cargo build && cargo run
+
+up_version_minor_ts:
+	cd $(TS_OUTPUT_DIR) && npm version minor && cd -
+
+up_version_patch_ts:
+	cd $(TS_OUTPUT_DIR) && npm version patch && cd -
+
+clean:
+	rm $(TS_OUTPUT_DIR)/index.ts && rm $(TS_OUTPUT_DIR)/output.ts

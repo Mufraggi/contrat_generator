@@ -1,0 +1,26 @@
+name: Mon Flux de travail
+
+on:
+  pull_request:
+    types:
+      - synchronize
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Cloner le dépôt
+        uses: actions/checkout@v2
+
+      - name: Installer Rust avec Cargo and typeshare
+        run: make install_rust && make install_typeshare_cli
+
+      - name: generate ts
+        run: make generate_ts
+
+      - name: generate package
+        run: run_rust_script_ts
+
+      - name: up minor version
+        run: up_version_minor_ts

@@ -1,0 +1,10 @@
+{
+  "name": "test_my_pacakage2",
+  "version": "1.2.0",
+  "description": "package with my interface",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
+}
