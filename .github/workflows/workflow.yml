@@ -1,7 +1,8 @@
 name: Mon Flux de travail
 
 on:
-  branches:
+  push:
+    branches:
     - 'main'
 
 
