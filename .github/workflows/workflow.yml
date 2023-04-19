@@ -24,4 +24,4 @@ jobs:
         run: make run_rust_script_ts
 
       - name: up minor version
-        run: up_version_minor_ts
+        run: make up_version_minor_ts
