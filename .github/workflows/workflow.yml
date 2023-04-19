@@ -39,7 +39,7 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_KEY }}
         run: |
-          cd ts && pwd && npm login --registry=https://registry.npmjs.org/ --scope=@test_my_pacakage2 --always-auth
+          cd ts && pwd && npm login --registry=https://registry.npmjs.org/ --scope=. --always-auth
       - name: Publish Package
         run: |
           cd ts && npm publish --registry=https://registry.npmjs.org/
