@@ -21,7 +21,7 @@ jobs:
         run: make generate_ts
 
       - name: generate package
-        run: run_rust_script_ts
+        run: make run_rust_script_ts
 
       - name: up minor version
         run: up_version_minor_ts
