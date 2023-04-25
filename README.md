@@ -12,4 +12,4 @@ You must create an account on npm and generate an Access token for the CI. Save 
 
 After that, you need to set up in `ts/package.json` the package's name and description.
 
-Moreover, usually that is all.
+And this is all.
