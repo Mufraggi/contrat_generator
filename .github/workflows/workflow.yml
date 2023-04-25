@@ -28,16 +28,10 @@ jobs:
 
 
 
-      - name: Use Node.js
+      - name: Use Node.js And Login to NPM and Publish Package
         uses: actions/setup-node@v2
         with:
           node-version: '18.x'
       - name: Install Dependencies
-        run: cd ts && npm install
+        run: cd ts && npm install && npm install && echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_KEY }}" > .npmrc && npm publish
 
-      - name: Login to NPM
-        run: |
-          cd ts && echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_KEY }}" > .npmrc
-      - name: Publish Package
-        run: |
-          cd ts && npm publish
