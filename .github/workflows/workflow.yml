@@ -33,5 +33,5 @@ jobs:
         with:
           node-version: '18.x'
       - name: Install Dependencies
-        run: cd ts && npm install && npm install && echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_KEY }}" > .npmrc && npm publish
+        run: cd ts && npm install && cat package.json && echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_KEY }}" > .npmrc && npm publish
 
