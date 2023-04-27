@@ -35,3 +35,10 @@ jobs:
       - name: Install Dependencies
         run: cd ts && npm install && cat package.json && echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_KEY }}" > .npmrc && npm publish
 
+      - name: add and push
+        run: |
+            git config --local user.email "action@github.com"
+            git config --local user.name "GitHub Action"
+            git add package.json
+            git commit -m "Mise à jour de la version [skip ci]" package.json
+            git push
