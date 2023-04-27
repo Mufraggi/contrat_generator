@@ -40,5 +40,5 @@ jobs:
             git config --local user.email "action@github.com"
             git config --local user.name "GitHub Action"
             git add .
-            git commit -m "Mise à jour de la version [skip ci]" package.json
+            git commit -m "Mise à jour de la version  package.json [skip ci]"
             git push
