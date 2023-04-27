@@ -1,6 +1,6 @@
 {
   "name": "test_my_pacakage2",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "description": "package with my interface",
   "main": "index.js",
   "types": "index.d.ts",
